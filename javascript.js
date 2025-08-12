@@ -26,3 +26,7 @@ function getHumanChoice() {
 
   return input;
 }
+
+// Create variable to store human and computer score
+let humanScore = 0;
+let computerScore = 0;

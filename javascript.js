@@ -16,3 +16,13 @@ function getComputerChoice() {
     return "scissors";
   }
 }
+
+// Get the human choice
+function getHumanChoice() {
+  // Displays a prompt asking the player to enter "rock", "paper" or "scissors"
+  let input = prompt("Choose rock, paper or scissors: ");
+  // Covert input to lower case to make humanChoice case-insensitive
+  input = input.toLowerCase();
+
+  return input;
+}

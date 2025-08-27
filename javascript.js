@@ -17,20 +17,13 @@ function getComputerChoice() {
   }
 }
 
-// Get the human choice
-function getHumanChoice() {
-  // Displays a prompt asking the player to enter "rock", "paper" or "scissors"
-  let input = prompt("Choose rock, paper or scissors: ");
-  // Convert input to lower case to make humanChoice case-insensitive
-  input = input.toLowerCase();
-
-  return input;
-}
 // Create variable to store human and computer score
 let humanScore = 0;
 let computerScore = 0;
 
+const currentScore = document.querySelector(".currentScore");
 const resultDiv = document.querySelector(".result");
+const finalResult = document.querySelector(".finalResult");
 
 // Create function receive human choice and computer choice as parameter
 function playRound(humanChoice, computerChoice) {
@@ -78,6 +71,13 @@ function playRound(humanChoice, computerChoice) {
       ++humanScore;
       resultDiv.textContent = "You win! Scissors beat Paper";
     }
+  }
+
+  currentScore.textContent = `Current score: User ${humanScore} | Computer ${computerScore}`;
+
+  if (humanScore === 5 || computerScore === 5) {
+    if (humanScore === 5) finalResult.textContent = "Congratulation! You won!";
+    else finalResult.textContent = "Unlucky! You lost!";
   }
 }
 
